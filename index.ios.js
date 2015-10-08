@@ -18,6 +18,7 @@ var {
 } = React;
 
 var firebaseRef = "<YOUR-FIREBASE-URL>";
+
 var FirebaseManager = require('react-native').NativeModules.FirebaseManager;
 
 var UserList = require("./components/UserList");
@@ -110,7 +111,7 @@ var ReactAndFirebase = React.createClass({
           <View style={styles.container}>
             <Image
               source={{uri: user.profileImageUrl}}
-              style={[styles.circle, styles.profileImageUrl]} />
+              style={[styles.circle, styles.profileImage]} />
           </View>
           <View style={styles.container}>
             <Text style={[styles.descubreText, {textAlign:'left'}]}> {user.displayName}</Text>
@@ -181,6 +182,12 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     width: 270,
     color: '#777'
+  },
+  mainContainer: {
+    marginTop: 40,
+    paddingBottom: 30,
+    borderBottomWidth: 4,
+    borderBottomColor: "#dedede"
   },
   profileImage: {
     borderWidth: 2,

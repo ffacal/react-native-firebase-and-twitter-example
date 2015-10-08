@@ -48,12 +48,14 @@ var UserList = React.createClass({
       .done();
   },
 
-  onPress: function () {
+  onPress: function (user) {
     // navigate to user
+    console.log(user.username + " row clicked!");
   },
 
   renderRow: function (user) {
     return (
+        <TouchableHighlight onPress={this.onPress} underlayColor="#fff">
         <View>
           <View style={styles.rowItem}>
             <View>
@@ -66,6 +68,7 @@ var UserList = React.createClass({
           </View>
           <View style={styles.separator} />
         </View>
+        </TouchableHighlight>
     );
   },
 
@@ -111,6 +114,10 @@ var styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#fff',
     alignSelf: 'stretch',
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#CCCCCC',
   },
   text: {
     marginTop: 15,
