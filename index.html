@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-native-firebase-and-twitter-example by quuack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-native-firebase-and-twitter-example</h1>
+      <h2 class="project-tagline">React Native Firebase integration Demo for iOS</h2>
+      <a href="https://github.com/quuack/react-native-firebase-and-twitter-example" class="btn">View on GitHub</a>
+      <a href="https://github.com/quuack/react-native-firebase-and-twitter-example/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/quuack/react-native-firebase-and-twitter-example/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-native-firebase-integration-demo-for-ios" class="anchor" href="#react-native-firebase-integration-demo-for-ios" aria-hidden="true"><span class="octicon octicon-link"></span></a>React Native Firebase integration Demo for iOS</h1>
+
+<p>While this demo has been tested in IOS and works, it is still work in progress.</p>
+
+<p>During my first React Native prototype project I couldn't find a good example of Firebase working with React Native. Instructions described here: <a href="https://www.firebase.com/blog/2015-05-29-react-native.html">https://www.firebase.com/blog/2015-05-29-react-native.html</a> didn't work as I expected. </p>
+
+<p>I wrote this example based on Firebase official docs and demo: </p>
+
+<p><a href="https://github.com/firebase/login-demo-ios">https://github.com/firebase/login-demo-ios</a> 
+<a href="https://github.com/firebase/firebase-simple-login-objc/blob/master/docs/v1/providers/twitter.md">https://github.com/firebase/firebase-simple-login-objc/blob/master/docs/v1/providers/twitter.md</a></p>
+
+<p>Objective-C is far from being my main expersite (please, don't take this doc as reference for good practices) With a little bit of work, I managed to expose a React Bridge containing a few methods that allowed me to authenticate with Twitter and persist the user in my Firebase database. It also contains an example on how to fetch data from a react native component using Firebase REST API.</p>
+
+<p>This demo implements Firebase's authentication features and it focuses on Twitter Oauth methods.
+Note that Firebase also supports authentication with email &amp; password and custom auth tokens as well as other providers (Facebook, Linkedin, Google, etc.)
+You can read the full <a href="https://www.firebase.com/docs/ios/guide/user-auth.html">iOS authentication guide here</a>.</p>
+
+<p>This demo requires that <a href="https://cocoapods.org/">Cocoapods</a> is installed.</p>
+
+<h2>
+<a id="running-the-demo" class="anchor" href="#running-the-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running the Demo</h2>
+
+<p>Donwload the repository and run the following command in the root folder:</p>
+
+<pre><code>$ npm install
+</code></pre>
+
+<p>To download and setup all necessary SDKs, run the following command within ./ios/:</p>
+
+<pre><code>$ pod install
+</code></pre>
+
+<p>Next, open <code>reactAndFireBase.xcworkspace</code> in XCode (not <code>reactAndFireBase.xcodeproj</code>,
+since you need to include the Cocoapod dependencies).</p>
+
+<p>You'll then need to edit the files <code>reactAndFirebase/ViewController.m</code> and specify the
+Firebase app you're using as well as your Twitter API key. </p>
+
+<p>Don't forget to <a href="https://www.firebase.com/docs/ios/guide/user-auth.html#section-enable-providers">enable the relevant OAuth providers</a>
+in your Firebase app.</p>
+
+<p>Finally, run the demo app in XCode.</p>
+
+<p>React Version: ^0.11.4</p>
+
+<h2>
+<a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h2>
+
+<p>If your build fails, check that pod install had run successfuly. If the console throws this warning, most likely you will have to follow the instructions and then re-run the command. </p>
+
+<p>[!] The <code>reactAndFirebase [Debug]</code> target overrides the <code>OTHER_LDFLAGS</code> build setting defined in <code>Pods/Target Support Files/Pods/Pods.debug.xcconfig'. This can lead to problems with the CocoaPods installation
+    - Use the</code>$(inherited)` flag, or
+    - Remove the build settings from the target.</p>
+
+<p>[!] The <code>reactAndFirebase [Release]</code> target overrides the <code>OTHER_LDFLAGS</code> build setting defined in <code>Pods/Target Support Files/Pods/Pods.release.xcconfig'. This can lead to problems with the CocoaPods installation
+    - Use the</code>$(inherited)` flag, or
+    - Remove the build settings from the target.</p>
+
+<p>I had to remove the Tests from the project as well to get it working.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/quuack/react-native-firebase-and-twitter-example">React-native-firebase-and-twitter-example</a> is maintained by <a href="https://github.com/quuack">quuack</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
